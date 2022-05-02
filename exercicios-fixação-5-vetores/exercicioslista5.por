@@ -1,17 +1,17 @@
-programa {
+programa {
 	
 	funcao inicio()
 	{
-	   // exercicio1()
-	   // exercicio2()
-	   // exercicio3()
-	   // exercicio4()
-	   // exercicio5()
-	   // exercicio6()
-	   // exercicio7()
-	    exercicio8()
-	   // exercicio9()
-	   // exercicio10()
+	     exercicio1()
+		exercicio2()
+	     exercicio3()
+	     exercicio4()
+	     exercicio5()
+	     exercicio6()
+	     exercicio7()
+	     exercicio8()
+	     exercicio9()
+	
 	}
 
 	funcao exercicio1() {
@@ -69,7 +69,7 @@ programa {
 	}
 
 	funcao exercicio5() {
-		real atletas[10], media=0
+		real atletas[10], media=0.0
 
 		para(inteiro i=0; i < 10; i++){
 			escreva("digite um atleta:\n")
@@ -127,52 +127,109 @@ programa {
 	}
 
 	funcao exercicio8() {
-		inteiro vetor[10], vetorA[10], contador=0, contador1=0
+		inteiro vetor[10], vetorimpar[10], numero=0, contador=0, contador1=0
 
-		para(inteiro i=0; i < 10; i++){
+		enquanto(contador + contador1 < 10) {
+
 			escreva("digite um numero: ")
-			leia(vetor[i])
+			leia(numero)
 			limpa()
-		}
 		
-		para(inteiro i=0; i < 10; i++){
-			se(vetor[i] % 2 == 0 ) {
-				se(vetorA[contador] == 0) {
-					vetorA[contador] = vetor[i]	
-					contador++
+			se(numero % 2 == 0) {
+				vetor[contador] = numero
+				contador++
+			}
+
+			senao {
+				vetorimpar[contador1] = numero
+				contador1++
+			}
+		}
+
+		listapar(vetor, contador)
+		listaimpar(vetorimpar, contador1)
+	}
+	funcao listapar(inteiro vetor[], inteiro contador) {
+			inteiro copia=0
+			
+			para(inteiro t=0; t < contador; t++){
+				para(inteiro i=0; i < contador - 1; i++){
+					se(vetor[i] < vetor[i+1]) {
+						copia = vetor[i]
+						vetor[i] = vetor[i+1]
+						vetor[i+1] = copia
 					}
 				}
-	     }
-	     
+			}
+			
+			para(inteiro i=0; i < contador; i++){
+				escreva(" ", vetor[i], " ")
+			}
+	}
+	funcao listaimpar(inteiro vetorimpar[], inteiro contador1) {
+			inteiro copia=0
+			
+			para(inteiro g=0; g < contador1; g++){
+				para(inteiro i=0; i < contador1-1; i++){
+					se(vetorimpar[i] > vetorimpar[i+1]) {
+						copia = vetorimpar[i]
+						vetorimpar[i] = vetorimpar[i+1]
+						vetorimpar[i+1] = copia
+					}
+				}
+			}
+
+			para(inteiro i=0; i < contador1; i++){
+			escreva("  ",vetorimpar[i], "  ")
+
+			}
+	}
+
+	funcao exercicio9() {
+		cadeia vetor[10], nomes
+		inteiro contador=0
+
+		vetor[0] = "Renatinho"
+		vetor[1] = "Renatou"
+		vetor[2] = "Renatei"
+		vetor[3] = "Renataras"
+		vetor[4] = "Renatado"
+		vetor[5] = "Renatão"
+		vetor[6] = "Renatóte"
+		vetor[7] = "Renatéte"
+		vetor[8] = "Renatuilli"
+		vetor[9] = "Renato"
+
+		escreva("digite um nome que esteja relacionado com Renato:  ")
+		leia(nomes) 
+		
 		para(inteiro i=0; i < 10; i++){
-			se(vetor[i] % 2 != 0 ) {
-				se(vetorA[contador] == 0) {
-					vetorA[contador] = vetor[i]	
-					contador++
-				}
+			se(nomes == vetor[i]) {
+
+			contador ++
+			
 			}
 		}
 
-		para(inteiro a=0; a < 10; a++){
-
-			para(inteiro i=0; i < 10; i++){
-				se(vetorA[contador] < vetorA[contador1]) {
-				vetorA[contador1] = vetorA[i]
-				contador1++
-				}
-			}
+		se( contador !=  0) {
+			escreva("achei")
 		}
-	}	
+
+		senao {
+			escreva("não achei")
+		}
+	}
 }
+
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2931; 
- * @DOBRAMENTO-CODIGO = [25, 41, 57, 70, 101];
+ * @POSICAO-CURSOR = 201; 
+ * @DOBRAMENTO-CODIGO = [16, 25, 41, 57, 70, 89, 101, 137, 131, 128, 151, 168, 187];
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {vetorA, 130, 21, 6};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */

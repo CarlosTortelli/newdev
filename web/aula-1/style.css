@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+}
+
+section {
+  margin: 30px 30px 90px 120px;
+  border: solid #d60808;
+  padding: 50px;
+  height: 100px;
+  width: 100px;
+}
+
+button {
+  color: #250421;
+}
+#goiaba {
+  color: #85ff33;
+}
+.banana {
+  color: #d60808 !important;
+}

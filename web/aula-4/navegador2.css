@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container2 {
+  width: 60rem;
+  height: 62.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: gray;
+}
+
+.caixa {
+  width: 54.9rem;
+  height: 53.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: rgb(184, 178, 178);
+}
+
+a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

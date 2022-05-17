@@ -13,6 +13,8 @@ body {
   flex-direction: column;
   justify-content: space space-around;
   align-items: center;
+
+  padding-inline: 2.8rem;
 }
 
 .container {
@@ -51,6 +53,22 @@ p {
   justify-content: center;
   background-image: url(https://i.ytimg.com/vi/7nIaLraNpAo/maxresdefault.jpg);
   align-items: center;
+}
+
+a {
+  text-decoration: none;
+  width: 16rem;
+  height: 5rem;
+  border-radius: 8rem;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  border: 1px solid rgb(6, 77, 90);
+  background-color: rgb(8, 151, 127);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
 }
 
 .containersegundo,

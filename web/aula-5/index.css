@@ -129,7 +129,7 @@ h2 {
 
 main {
   display: flex;
-  flex-direction: column;
+  flex-direction: center;
   justify-content: center;
   align-items: center;
 }
@@ -145,17 +145,39 @@ main-about h2 {
 
 table thead {
   margin-top: 1.5rem;
-
 }
 
-th, td {
+th,
+td {
   border: 1px solid rgb(0, 0, 0);
   padding: 2rem;
 }
 
-table{
+table {
   border: 1px solid;
 }
 
+main section:first-child {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-image: url('https://e2.365dm.com/18/11/1600x900/skysports-f1-sebastian-vettel_4482614.jpg');
+}
 
+.batata,
+.goiaba,
+.migau {
+  margin-top: 5rem;
+  margin-bottom: 13rem;
+}
 
+main section:last-child {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: 1px solid red;
+}

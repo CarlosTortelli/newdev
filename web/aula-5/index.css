@@ -17,7 +17,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-family: 'Jura', sans-serif;
   font-family: 'Macondo', cursive;
-  background-image: url('https://th.bing.com/th/id/OIP.UDl4lCX_mdzNyVO-D1FbFwHaEy?pid=ImgDet&rs=1') ;
+  background-image: url('https://th.bing.com/th/id/OIP.UDl4lCX_mdzNyVO-D1FbFwHaEy?pid=ImgDet&rs=1');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -36,7 +36,6 @@ footer {
   width: 80%;
   background-color: antiquewhite;
   margin: 0 auto;
- 
 }
 
 ul {
@@ -82,50 +81,81 @@ footer {
   flex-direction: column;
   padding-inline: 3rem;
   margin-bottom: 100rem;
-
 }
 
 img {
   padding-inline-start: 2.5rem;
-  
 }
 
 .contato {
   background-color: red;
   height: 100%;
-  background-image: url('https://th.bing.com/th/id/OIP.UDl4lCX_mdzNyVO-D1FbFwHaEy?pid=ImgDet&rs=1') ;
+  background-image: url('https://th.bing.com/th/id/OIP.UDl4lCX_mdzNyVO-D1FbFwHaEy?pid=ImgDet&rs=1');
 }
 
-.social, p {
-  cursor:auto;
+.social,
+p {
+  cursor: auto;
   padding: 1rem;
 }
 
- button {
+button {
   text-transform: uppercase;
   font-size: 2.4rem;
   padding: 1rem;
   border-radius: 3rem;
   border: 1px solid red;
   color: red;
-  background-color:  rgb(238, 237, 236);
+  background-color: rgb(238, 237, 236);
   cursor: pointer;
 }
 
-button:hover{
+button:hover {
   color: red;
   background-color: rgb(241, 191, 144);
   font-size: 3.2rem;
 }
 
-main ul{
- color: rgb(179, 148, 10);
- background-color: rgb(252, 211, 178);
- margin-bottom: 2rem;
- margin-top: 2rem;
+main ul {
+  color: rgb(179, 148, 10);
+  background-color: rgb(252, 211, 178);
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 h2 {
   color: rgb(179, 148, 10);
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main-about p {
+  line-height: 3rem;
+}
+
+main-about h2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+table thead {
+  margin-top: 1.5rem;
+
+}
+
+th, td {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 2rem;
+}
+
+table{
+  border: 1px solid;
+}
+
+
 

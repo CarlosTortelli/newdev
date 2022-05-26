@@ -42,11 +42,20 @@ subtraiValores();
 
 //método 3 
 
-const FolhadePapel = {
-  color: 'branco',
-   tamanho: 'a4'
+const carro = {
+  color: 'branco',//atributo
+   andar:function() { //método
+     console.log('andando')
+   }
 }
 
-console.log('--->', FolhadePapel);
+const multiplicaValores = () => {
+  console.log('multiplicaValores', multiplicaValores);
+}
+
+multiplicaValores();
+
+
+
 
 

@@ -106,7 +106,7 @@ button {
   border-radius: 3rem;
   border: 1px solid red;
   color: red;
-  background-color: rgb(238, 237, 236);
+  background: linear-gradient(red, yellow);
   cursor: pointer;
 }
 

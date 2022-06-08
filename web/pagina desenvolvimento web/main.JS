@@ -1,42 +1,49 @@
-let peoples = [];
+let spaces = [];
 
-const pessoas = (event) => {
-  event.preventDefault();
-  const people = {
-    nome: document.getElementById('from').value,
-    endereço: document.getElementById('to').value,
-    número: document.getElementById('fra').value,
-    email: document.getElementById('ib').value
-  }
+const loadItens = () => {
+  const itemsJaArmazenados = localStorage.getItem('listaDeEspaços');
+  return itemsJaArmazenados ? JSON.parse(itemsJaArmazenados) : [];
+}
+
+const listSpaces = () => {
+  const spaces = loadItens();
   
-  peoples.push(people);
-  
-  // console  
-  localStorage.setItem('diferente', JSON.stringify(peoples));
-
-  document.querySelector('input').reset();
-
-  const items = localStorage.getItem('diferente');
-
-  const itemsSerialized = JSON.parse(items)
-
   let ul = document.querySelector('ul');
-  if (!ul) {
-    ul = document.createElement('ul');
+  if (ul) {
+    ul.remove();
   }
-
-  // ul[{}, {}] - length = 2;
-  // itemsSerialized[{}, {}, {}] - length = 3;
-  console.log('node list ul', ul.childNodes);
-  itemsSerialized.forEach((item, index) => {
+  
+  ul = document.createElement('ul');
+ 
+  spaces.forEach((item, index) => {
     const li = document.createElement('li');
-    li.innerHTML = `Nome: ${item.name} Idade: ${item.age}, Altura: ${item.height}`
+    li.innerHTML = `Nomes: ${item.nome} Endereços: ${endereço.age}, Números: ${item.numero}, Emails: ${item.email}`
     console.log('ITEMS', item)
     ul.appendChild(li);
   });
   
-  document.getElementById('input').appendChild(ul);
+  document.getElementById('box').appendChild(ul);
+}
+
+listSpaces();
+
+const addSpace = (event) => {
+  event.preventDefault();
+  const space = {
+    endereço: document.getElementById('to').value,
+    nome: document.getElementById('from').value,
+    numero: document.getElementById('fra').value,
+    email: document.getElementById('ib').value,
+  }
+  
+  spaces = loadItens();
+
+  spaces.push(space);
+  
+  localStorage.setItem('listaDeEspaços', JSON.stringify(spaces));
+
+  document.querySelector('form').reset();
 }
 
 const botaoDeAdicionar = document.getElementById('btn');
-botaoDeAdicionar.addEventListener('click', pessoas)
+botaoDeAdicionar.addEventListener('click', addSpace)

@@ -73,18 +73,19 @@ h1 {
   color: darkblue;
 }
 
-th,
-td {
+ul {
   border: 1px solid rgb(0, 0, 0);
   padding: 1.5rem;
   background-color: rgb(244, 242, 250);
-}
-
-table {
-  border: 1px solid;
   width: 75rem;
-  background-color: brown;
+  list-style: none;
 }
 
+li {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 1.5rem;
+  background-color: rgb(244, 242, 250);
+
+  }
 
 

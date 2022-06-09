@@ -47,3 +47,12 @@ const addSpace = (event) => {
 
 const botaoDeAdicionar = document.getElementById('btn');
 botaoDeAdicionar.addEventListener('click', addSpace)
+
+
+const onClickEdit = () => {
+ console.log('on click edit')
+}
+
+const onClickRemove = () => {
+  console.log("on click delete");
+}

@@ -37,15 +37,15 @@ const onClickEdit = (element) => {
 }
 
 const onClickRemove = (element) => {
-  const identificadorASerRemovido = +element.getAttribute('identificador');
-  const pessoas = loadPeoples()
-   pessoas.splice(identificadorASerRemovido, 1)
+  const identificadorASerEncontrado = 
+  +element.getAttribute('identificador');
 
-  console.log('on click delete', element.getAttribute('identificador'));
+  const pessoas = loadPeoples();
 
-  localStorage.setItem('listaDePessoas', JSON.stringify(pessoas))
-  listPeoples()
-
+  pessoas.splice(identificadorASerEncontrado, 1);
+  
+  localStorage.setItem('listaDePessoas', JSON.stringify(pessoas));
+  listPeoples();
 }
 
 const salvarRegistroEditado = (registroSendoEditado) => {
@@ -129,7 +129,7 @@ const addPeople = (event) => {
     height: document.getElementById('height').value,
   }
   console.log('after save registry', identificadorQueTaSendoEditado);
-  if (identificadorQueTaSendoEditado || identificadorQueTaSendoEditado == 0) {
+  if (identificadorQueTaSendoEditado || identificadorQueTaSendoEditado === 0) {
     salvarRegistroEditado(people);
     return;
   }

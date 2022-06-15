@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="atributos.css">
-  
-  <title>veículos</title>
-</head>
-<body>
-  <form>
-    <label for="name">Modelo do Carro:</label>
-    <input id="name" type="text">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <label for="color">Cor do Carro:</label>
-    <input id="color" type="text">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <label for="brand">Marca do Carro:</label>
-    <input id="brand" type="text">
-    <button id="btn">
-     <a href="http://127.0.0.1:5500/veiculos/cadastro.HTML"> Próximo</a>
-    </button>
+    <link rel="stylesheet" href="atributos.css" />
 
-    
-  </form>
+    <title>veículos</title>
+  </head>
+  <body>
+    <form>
+      <label for="name">Modelo do Carro:</label>
+      <input id="name" type="text" />
 
-  <section id="list-section">
+      <label for="color">Cor do Carro:</label>
+      <input id="color" type="text" />
 
-  </section>
-  
-  <script src="main.js"></script>
+      <label for="brand">Marca do Carro:</label>
+      <input id="brand" type="text" />
 
-</body>
+      <label for="quantidade">Quantidade de Carros</label>
+      <input id="quantidade" type="number" />
+
+      <button id="butun">enviar</button>
+      <button id="btt">Consultar Saldo</button>
+    </form>
+
+    <section id="list-section"></section>
+
+    <script src="atributos.js"></script>
+  </body>
 </html>

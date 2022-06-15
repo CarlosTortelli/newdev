@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 50rem;
   display: flex;
   justify-content: center;
@@ -27,18 +28,18 @@ body {
   align-items: center;
   margin-top: 32rem;
   background-color: aliceblue;
-  
 }
 
-form  {
+form {
   margin-top: 4rem !important;
   margin: 0 auto;
   display: grid;
   width: 50%;
-background-color: aliceblue;
+  background-color: aliceblue;
 }
 
-input, button {
+input,
+button {
   border: 1px solid #ccc;
   padding: 0.5rem;
   background-color: white;
@@ -59,8 +60,5 @@ button {
 }
 
 button:hover {
-  width: 33rem;
-  height: 3rem;
   background-color: #2bff64;
 }
-

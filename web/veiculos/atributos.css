@@ -14,7 +14,7 @@ body {
 
 :root {
   --primary-color: #2bff64;
-  --bg-color-primary: #10852f;
+  --bg-color-primary: #0a6923;
   font-size: 62.5%;
 }
 
@@ -40,9 +40,9 @@ form {
 
 input,
 button {
-  border: 1px solid #ccc;
+  border: 1px solid rgb(0, 119, 22);
   padding: 0.5rem;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 
 label {
@@ -60,5 +60,5 @@ button {
 }
 
 button:hover {
-  background-color: #2bff64;
+  background-color: #22dd54;
 }

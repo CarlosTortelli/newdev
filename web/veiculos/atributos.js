@@ -67,15 +67,38 @@ if (btt) {
   })
 }
 
-const listarCarrosNosDetalhes = () => {
-  const carros = carragarListaDeCarros()
-
-  carros.forEach(carro => {
-    console.log('carro -> ', carro)
-  })
-}
-
 const carragarListaDeCarros = () => {
-  const carros = localStorage.getItem('veiculos')
+  carros = localStorage.getItem('veiculos')
   return carros ? JSON.parse(carros) : []
 }
+
+const listarCarrosNosDetalhes = () => {
+  const carr = carragarListaDeCarros()
+
+  let ul = document.querySelector('ul')
+  if (ul) {
+    ul.remove()
+  }
+
+  ul = document.createElement('ul')
+
+  console.log('banana', carros)
+
+  carr.forEach(carro => {
+    const li = document.createElement('li')
+    li.innerHTML = `carro: ${carro.name},    
+    cor: ${carro.color},  
+    brand:${carro.brand},  
+     estoque: ${carro.quantidade}.
+     `
+
+    ul.appendChild(li)
+  })
+  const main = document.getElementById('main')
+  if (main) {
+    main.appendChild(ul)
+  }
+
+  console.log(document.getElementById('main'))
+}
+listarCarrosNosDetalhes()

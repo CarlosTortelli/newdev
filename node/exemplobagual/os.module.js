@@ -23,3 +23,8 @@ console.table(estatisticas)
 setInterval(() => {
   console.log('!')
 }, 1000)
+
+
+
+//querystring é .query
+//no insomnia é '?' chave(ex:nome) e valor do att, para mais de um se usa o "&"

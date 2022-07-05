@@ -7,6 +7,18 @@ let users = require('./users.json')
 const getUsers = (request, response) => {
   const { name, lastName, age, remove } = URL.parse(request.url, true).query
   let message = ''
+
+  response.writeHead(200, { 
+    'Acess-Control-Alow-Origin': ['*']
+  })
+
+  if (!nome) {
+    response.writehead(400, {
+      'Acess-Control-Alow-Origin': ['*']
+    })
+    return response.end('nome não informado')
+  }
+
   if (name) {
     message = 'usuário removido com sucesso'
     const user = {

@@ -7,14 +7,15 @@
   font-size: 62.5%;
 }
 
+
 body {
   font-size: 1.6rem;
-}
-
-h1 {
-  border: 1px solid red;
-  background-color: rgb(255, 240, 240);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.banana {
+  border: 1px solid red;
+  background-color: aliceblue;
 }

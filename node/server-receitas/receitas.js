@@ -4,19 +4,19 @@ const fs = require('fs')
 const path = require('path')
 let receitas = require('./receitas.json')
 
+
 const server = http.createServer((request, response) => {
 
-const {titulo, ingrediente, quantidade, medida, remove} = URL.parse(request.url, true).query
-let bagual = console.log('xupisca nene')
-
+  if(request.url === "/receitas") {
+    const {titulo, ingrediente, quantidade, medida, remove} = URL.parse(request.url, true).query
+    let bagual = console.log('xupisca nene')
+    
 if(titulo){
 const receita = {titulo, ingrediente, 
 quantidade, 
 medida}
 
-if(ingrediente){
-  ingrediente = ingrediente.split('|')
-}
+
 
 
 if (remove) {
@@ -51,6 +51,12 @@ fs.writeFile(
 }
 else {
   response.end(JSON.stringify(receitas));
+}
+}
+
+
+if(request.url === "/banana") {
+  response.end('pegou na minha')
 }
 })
 server.listen(3009, () => {

@@ -1,0 +1,15 @@
+{
+  "name": "server-carros",
+  "version": "1.0.0",
+  "description": "",
+  "main": "carros.js",
+  "scripts": {
+    "dev": "npx nodemon carros.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

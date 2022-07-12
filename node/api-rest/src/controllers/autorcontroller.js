@@ -1,13 +1,23 @@
+const database = require('../databases/knex')
 
-exports.findAll = (request, response) => {
-  const query = request.query
-  console.log('Query string authors', query)
-  return response.status(200).send('minha tia')
+exports.findAll = async (request, response) => {
+  try {
+
+    const sql = await database.select('*').from('authors')
+    console.log('sql -->', sql)
+    return response.status(200).send('minha tia')
+  } catch (error) {
+    return response.status(500).send({error: error?.message || e })
+  }
 }
 
-exports.create = (request, response) => {
-  console.log('recebendo tia', request.body)
-  return response.status(200).send('minha tia post')
+exports.create = async (request, response) => {
+  try {
+   await database('authors').insert(request.body)
+   return response.status(200).send({ status: 'sucess'})
+  }catch (error){
+   return response.status(500).send({error: error?.message || e})
+  }
 }
 
 exports.getById = (request, response) => {

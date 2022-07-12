@@ -18,7 +18,6 @@ routes.delete('/authors/:id', autorcontrole.deleteById)
 
 routes.put('/authors/:id', autorcontrole.putById)
 
-routes.patch('/authors/:id', autorcontrole.patchById)
 
 
 //livros
@@ -34,8 +33,6 @@ routes.get('/books/:id',bookcontroller.getById)
 routes.delete('/books/:id', bookcontroller.deleteById)
 
 routes.put('/books/:id', bookcontroller.putById)
-
-routes.patch('/books/:id', bookcontroller.patchById)
 
 
 module.exports = routes

@@ -1,13 +1,17 @@
-const express = require('express')
-const cors = require('cors')
-const routes = require('./routes')
-const app = express()
-const PORT = 3020
 
-app.use(cors())
-app.use(express.json())
-app.use(routes)
+const express = require('express');
+const cors = require('cors');
+
+const routes = require('./routes');
+
+const app = express();
+
+const PORT = 3005;
+
+app.use(cors());
+app.use(express.json());
+app.use(routes);
 
 app.listen(PORT, () => {
-  console.log(`comi quem leu ${PORT}`)
-})
+  console.log(`API is listening on port ${PORT} `)
+});

@@ -1,73 +1,117 @@
-const database = require('../databases/knex')
+const database = require('../databases/knex');
+const logger = require('../utils/logger');
 
- exports.findAll = async (request, response) => {
+exports.findAll = async (request, response) => {
   try {
-
-    const sql = await database.select('*').from('books')
-    console.log('sql -->', sql)
-    return response.status(200).send('minha tia')
+    const sql = await database
+      .select(
+        ['books.id', 'books.title', 'authors.name as author Name']
+      )
+      .from('books')
+      .innerJoin('authors', 'authors.id', 'books.authorId');
+    
+    return response.status(200)
+      .send({
+        books: sql
+      });
   } catch (error) {
-    return response.status(500).send({error: error?.message || e })
+    logger(error.message);
+    return response.status(500)
+      .send({ error: error?.message || e });
   }
 }
 
 exports.create = async (request, response) => {
   try {
-   await database('books').insert(request.body)
-   return response.status(200).send({ status: 'sucess'})
-  }catch (error){
-   return response.status(500).send({error: error?.message || e})
+    await database('books').insert(request.body);
+
+    return response.status(200).send({
+      status: 'success'
+    });
+  } catch (error) {
+    return response.status(500).send({ error: error?.message || e });
   }
 }
-
 
 exports.getById = async (request, response) => {
   try {
-    const params = request.params
-    const [books] = await database.select('*').from('books').where('id', params.id).limit(1)
-    if(!books) {
-      return response.status(404).send(`o registro com o id mimimi não foi encontrado`)
-    } 
-    await database.select('*').from('books').where({id: books.id})
-    return response.status(200)({data: authors})
-   } catch (error) {
-    return response.status(500).send({error: error?.message || e})
-   }
+    const params = request.params;
+
+    const [book] = await database
+      .select('*')
+      .from('books')
+      .where({ id: params.id })
+      .limit(1);
+
+    if (!book) {
+      return response.status(404) // recurso não encontrado
+        .send(`O registro com id: ${params.id} não foi encontrado!`);
+    }
+    return response
+      .status(200)
+      .send({ data: book });
+  } catch (error) {// tratamento de exceção, trata os erros que ocorrem
+    return response.status(500).send({ error: error?.message || e });
+  }
 }
-
-
 
 exports.deleteById = async (request, response) => {
   try {
-   const params = request.params
-   const [books] = await database.select('*').from('books').where('id', params.id).limit(1)
-   if(!books) {
-     return response.status(404).send(`o registro com o id mimimi não foi encontrado`)
-   }
-   console.log('achou o nene', books)
-   console.log('tchau nene', request.body)
-   await database.delete({name: request.body.name}).from('books').where({id: books.id})
-   return response.status(200).send(`deletado por id${params.id}`)
-  } catch (error) {
-   return response.status(500).send({error: error?.message || e})
-  }
- }
- 
+    const params = request.params;
 
-exports.putById = async (request, response) => {
-  try {
-   const params = request.params
-   const[previousBook] = await database.select('*').from('books').where('id', params.id).limit(1)
-   if(!previousBook) {
-     return response.status(404).send(`o registro com id: ${params.id} no eqssiste`)
-   }
-   console.log('author previousauthor encontrado', previousBook )
-   console.log('author update', request.body)
-   await database.update({name: request.body.name }).from('books').where({id: previousBook.id})
-   return response.status(200).send({status: 'registro atualizado com sucesso' })
-   
-  } catch (error) {
-   return response.status(500).send({error: error?.message || e})
+    const [book] = await database
+      .select('*')
+      .from('books')
+      .where({ id: params.id })
+      .limit(1);
+
+    if (!book) {
+      return response.status(404) // recurso não encontrado
+        .send(`O registro com id: ${params.id} não foi encontrado!`);
+    }
+
+    await database
+      .delete()
+      .from('books')
+      .where({ id: book.id });
+
+    return response
+      .status(200)
+      .send({ status: 'Registro removido com sucesso' });
+  } catch (error) {// tratamento de exceção, trata os erros que ocorrem
+    return response.status(500).send({ error: error?.message || e });
   }
- }
- 
+}
+
+exports.put = async (request, response) => {
+  try {
+    const params = request.params;
+
+    // Busco o registro no banco de dados para validar se existe
+    const [previousBook] = await database
+      .select('*')
+      .from('books')
+      .where({ id: params.id })
+      .limit(1);
+
+    // se não existir, eu preciso informa o 
+    //client que não existe(não encontrado)
+    if (!previousBook) {
+      return response.status(404) // recurso não encontrado
+        .send(`O registro com id: ${params.id} não foi encontrado!`);
+    }
+
+    const nextBook = request.body;
+
+    await database
+      .update({ name: nextBook.name })
+      .from('authors')
+      .where({ id: previousBook.id });
+
+    return response
+      .status(200)
+      .send({ status: 'Registro atualizado com sucesso', data: nextAuthor });
+  } catch (error) {// tratamento de exceção, trata os erros que ocorrem
+    return response.status(500).send({ error: error?.message || e });
+  }
+}

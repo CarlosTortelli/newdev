@@ -18,7 +18,7 @@ exports.up = function(knex) {
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.down = function(knex) {
+exports.down = async function(knex) {
   return knex.schema.alterTable('professores', function(table) {
     table
     .dropForeign('professoresId')

@@ -4,6 +4,10 @@ const routes = express.Router()
 const cursoController = require('./controllers/cursoController')
 const professorController = require('./controllers/professorController')
 const aulaController = require('./controllers/aulaController')
+const indexController = require('./controllers/indexController')
+
+//index controller
+routes.get('/', indexController.index)
 
 //routes professores
 routes.get('/professores', professorController.findAll)

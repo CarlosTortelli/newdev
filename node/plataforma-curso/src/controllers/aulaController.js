@@ -15,7 +15,48 @@ exports.findAll = async (request, response) => {
 
 exports.create = async (request, response) => {
   try {
-    await database('aula').insert(request.body);
+
+    const requiredField = ['name', 'descrição', 'link', 'professoresId']
+
+    const requiredFieldsExists = [];
+    Object.keys(request.body).forEach(attr => {
+      if (!requiredField.includes(attr)) {
+        requiredFieldsExists.push(attr);
+      }
+    });
+
+   requiredField.forEach(requiredField => {
+      if (!request.body[requiredField]) {
+      requiredFieldsExists.push(requiredField)}
+    })
+
+    if (requiredFieldsExists.Lenght) {
+      return res.status(400).send({
+        status: 'Campos obrigatórios não foram informados!',
+        requiredField: requiredFieldsExists
+      });
+    }
+
+    const [curso] = await database.select('*').from('curso').where({ id: Number(req.body.courseId) });
+    if (!curso) {
+      return res.status(404).send({
+      status: 'Nenhum curso foi encontrado'
+    })
+  }
+
+  const [aula] = await database.select('*').from('aula').where({ id: Number(req.body.courseId) });
+  if (!aula) {
+    return res.status(404).send({
+    status: 'Nenhuma aula foi encontrado'
+  })
+}
+
+const [professor] = await database.select('*').from('professor').where({ id: Number(req.body.courseId) });
+if (!professor) {
+  return res.status(404).send({
+  status: 'Nenhuma professor foi encontrado'
+})
+}
 
     return response.status(200).send({
       status: 'success'

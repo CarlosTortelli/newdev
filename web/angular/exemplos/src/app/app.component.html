@@ -1,11 +1,23 @@
-<app-header></app-header>
 
-<app-main></app-main>
+<div class="w-100 h-100">
+  <app-header></app-header>
 
-<app-footer>
+  <div class="main row w-100">
+    <div class="col-12 d-flex justify-content-center align-items-center">
 
-</app-footer>
+      <app-card
+        [nameParam]="fullName"
+        [bioParam]="bio"
+        [link1Param]="link1"
+        [link2Param]="link2"
+        [subtitleParam]="subtitle"
+      >
+      </app-card>
 
+      
+    </div>
 
+  </div>
 
-
+  <app-footer></app-footer>
+</div>

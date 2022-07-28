@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RoomComponent } from './components/room/room.component';
+import { VimeModule } from '@vime/angular';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RoomComponent } from './components/room/room.component';
     RoomComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    VimeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

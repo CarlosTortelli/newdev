@@ -1,7 +1,10 @@
 aside {
   width: 348px !important;
   background-color: #121214;
-  border-left: 2px solid #29292E
+  border-left: 2px solid #29292E;
+  max-height: 777px;
+  min-height: 777px;
+  overflow-y: auto;
 }
 
 span {

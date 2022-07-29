@@ -1,4 +1,23 @@
 .container-video {
   max-width: 1100px;
   max-height: 60vh;
+  border-top: 2px solid rgb(71, 71, 71);
+  border-bottom: 2px solid rgb(71, 71, 71);
+  border-left: 2px solid rgb(70, 70, 70);
+  border-right: 2px solid rgb(70, 70, 70);
 }
+
+.banana-b {
+  border-bottom: 2px solid rgb(76, 76, 76);
+}
+
+p {
+  border-bottom: 2px solid rgb(78, 78, 78);
+}
+
+.room-bababa {
+  max-height: 777px;
+  min-height: 777px;
+  overflow-y: auto;
+}
+

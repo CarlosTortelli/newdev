@@ -1,23 +1,21 @@
+
 .container-video {
-  max-width: 1100px;
-  max-height: 60vh;
-  border-top: 2px solid rgb(71, 71, 71);
-  border-bottom: 2px solid rgb(71, 71, 71);
-  border-left: 2px solid rgb(70, 70, 70);
-  border-right: 2px solid rgb(70, 70, 70);
+  max-width: 1100px !important;
+  max-height: 60vh !important;
 }
 
-.banana-b {
-  border-bottom: 2px solid rgb(76, 76, 76);
+
+.bg-green {
+  background-color: #00875F;
 }
 
-p {
-  border-bottom: 2px solid rgb(78, 78, 78);
+
+.btn-challenge {
+  border: 1px solid #81D8F7;
+  color: #81D8F7;
 }
 
-.room-bababa {
-  max-height: 777px;
-  min-height: 777px;
-  overflow-y: auto;
+.btn-challenge:hover {
+  background-color: #81D8F7 !important;
+  color: #282828 !important;
 }
-
